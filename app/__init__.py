@@ -13,6 +13,7 @@ engine = create_engine("postgresql://postgres:123456@localhost:5432/tutorialFlas
 
 from .xssreflejado import xssreflejado
 from .xssalmacenado import xssalmacenado
+from .sqlinjection import sqlinjection
 
 
 def create_app():
@@ -27,4 +28,5 @@ def create_app():
 
     app.register_blueprint(xssreflejado)
     app.register_blueprint(xssalmacenado)
+    app.register_blueprint(sqlinjection)
     return app
