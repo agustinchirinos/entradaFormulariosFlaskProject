@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+{% block titulo %}XSS Almacenado Create{% endblock %}
+{% block contenido %}
+<h1>XSS Almacenado Create</h1>
+    <div class="row">
+        <div class="col-sm-4">
+            <form action="{{ url_for('xssalmacenado.xssalmacenadocreate') }}" method="post">
+                <div class="mb-3 mt-3">
+                    <label class="form-label">Título:</label>
+                    <input name="titulo" class="form-control" type="text"></textarea>
+                </div>
+
+                <div class="mb-3 mt-3">
+                    <label class="form-label">Mensaje:</label>
+                    <textarea name="mensaje" class="form-control" type="text" ></textarea>
+                </div>
+                <input type="submit" value="Enviar" class="btn btn-primary"/>
+            </form>
+        </div>
+    </div>
+{% endblock %}

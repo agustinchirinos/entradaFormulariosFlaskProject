@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+{% block titulo %}XSS Almacenado Index{% endblock %}
+{% block contenido %}
+<h1>XSS Almacenado Index</h1>
+    <a href="{{ url_for('xssalmacenado.xssalmacenadocreate') }}">Nuevo Post</a>
+    <table class="table">
+    <thead>
+    <tr>
+        <th>Título</th>
+        <th>Mensaje</th>
+    </tr>
+    </thead>
+    <tbody>
+    {% for post in posts %}
+        <tr>
+        <td>{{ post.titulo | safe }}</td>
+        <td>{{ post.mensaje | safe }}</td>
+        </tr>
+    {% endfor %}
+    </tbody>
+    </table>
+{% endblock %}
+

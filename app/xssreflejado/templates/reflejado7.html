@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+{% block titulo %}XSS Reflejado 7{% endblock %}
+{% block contenido %}
+<h1>XSS Reflejado 7</h1>
+    <div class="row">
+        <div class="col-sm-4">
+            <form action="{{ url_for('xssreflejado.reflejado7') }}" method="post">
+                <div class="mb-3 mt-3">
+                    <label class="form-label">Texto:</label>
+                    <input name="texto" class="form-control" value="{{ texto }}" type="text"/>
+                </div>
+                <div class="mb-3 mt-3">
+                    <label class="form-label">Url:</label>
+                    <input name="url" class="form-control" value="{{ url }}" type="text"/>
+                </div>
+                <input type="submit" value="Enviar" class="btn btn-primary"/>
+            </form>
+        </div>
+    </div>
+    {% if texto %}
+    <div class="row">
+        <a href="{{ url }}">{{ texto }}</a>
+    </div>
+    {% endif %}
+{% endblock %}
