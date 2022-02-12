@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+{% block titulo %}ORM Index{% endblock %}
+{% block contenido %}
+<h1>ORM Index</h1>
+    <div class="row">
+    <div class="col-sm-4">
+            <form action="{{ url_for('contramedidas.ormindex') }}" method="post">
+                <div class="mb-3 mt-3">
+                    <label class="form-label">Id:</label>
+                    <input name="id" class="form-control" value="{{ id }}" type="text"/>
+                </div>
+
+                <input type="submit" value="Buscar" class="btn btn-primary"/>
+            </form>
+        </div>
+    </div>
+    <table class="table">
+    <thead>
+    <tr>
+        <th>Id</th>
+        <th>Nombre</th>
+        <th>Apellidos</th>
+        <th>Dirección</th>
+    </tr>
+    </thead>
+    <tbody>
+    {% for cliente in clientes %}
+        <tr>
+        <td>{{ cliente.id }}</td>
+        <td>{{ cliente.nombre }}</td>
+        <td>{{ cliente.apellidos }}</td>
+        <td>{{ cliente.direccion }}</td>
+        </tr>
+    {% endfor %}
+    </tbody>
+    </table>
+{% endblock %}
+

@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% block titulo %}File Upload{% endblock %}
+{% block contenido %}
+<h1>File Upload</h1>
+    <div class="row">
+        <div class="col-sm-4">
+            <form action="{{ url_for('file.fileupload') }}" method="post" enctype="multipart/form-data">
+                <div class="mb-3 mt-3">
+                    <label class="form-label">Imagen:</label>
+                    <input name="fichero" class="form-control" type="file"/>
+                </div>
+                <input type="submit" value="Subir imagen" class="btn btn-primary"/>
+            </form>
+        </div>
+    </div>
+{% endblock %}
+

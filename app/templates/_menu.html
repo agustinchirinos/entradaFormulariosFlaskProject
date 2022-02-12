@@ -31,23 +31,23 @@
                   <li><a class="dropdown-item" href="{{ url_for('sqlinjection.sqlinjectionindex') }}">Obtener datos</a></li>
                   <li><a class="dropdown-item" href="{{ url_for('sqlinjection.sqlinjectionlogin') }}">Login</a></li>
               </ul>
-{#          </li>#}
-{#          <li class="nav-item dropdown">#}
-{#              <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">Ficheros</a>#}
-{#              <ul class="dropdown-menu">#}
-{#                  <li><a class="dropdown-item" href="{{ url_for('fileupload') }}">Upload</a></li>#}
-{#                  <li><a class="dropdown-item" href="{{ url_for('fileindex') }}">Index</a></li>#}
-{#                  <li><a class="dropdown-item" href="{{ url_for('fileexecute') }}">Execute</a></li>#}
-{#              </ul>#}
-{#          </li>#}
-{#          <li class="nav-item dropdown">#}
-{#              <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">Contramedidas</a>#}
-{#              <ul class="dropdown-menu">#}
-{#                  <li><a class="dropdown-item" href="{{ url_for('formwtf') }}">Formulario WTF</a></li>#}
-{#                  <li><a class="dropdown-item" href="{{ url_for('sqlinjectionindexparametrizada') }}">SQL Injection Parametrizada</a></li>#}
-{#                  <li><a class="dropdown-item" href="{{ url_for('ormindex') }}">ORM</a></li>#}
-{#              </ul>#}
-{#          </li>#}
+          </li>
+          <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">Ficheros</a>
+              <ul class="dropdown-menu">
+                  <li><a class="dropdown-item" href="{{ url_for('file.fileupload') }}">Upload</a></li>
+                  <li><a class="dropdown-item" href="{{ url_for('file.fileindex') }}">Index</a></li>
+                  <li><a class="dropdown-item" href="{{ url_for('file.fileexecute') }}">Execute</a></li>
+              </ul>
+          </li>
+          <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">Contramedidas</a>
+              <ul class="dropdown-menu">
+                  <li><a class="dropdown-item" href="{{ url_for('contramedidas.formwtf') }}">Formulario WTF</a></li>
+                  <li><a class="dropdown-item" href="{{ url_for('contramedidas.sqlinjectionindexparametrizada') }}">SQL Injection Parametrizada</a></li>
+                  <li><a class="dropdown-item" href="{{ url_for('contramedidas.ormindex') }}">ORM</a></li>
+              </ul>
+          </li>
       </ul>
     </div>
   </div>

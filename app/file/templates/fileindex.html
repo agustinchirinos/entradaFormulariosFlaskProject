@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+{% block titulo %}File Index{% endblock %}
+{% block contenido %}
+<h1>File Index</h1>
+    <div class="row">
+        <div class="col-sm-4">
+            <form action="{{ url_for('file.fileindex') }}" method="get">
+                <div class="mb-3 mt-3">
+                    <select class="form-control" name="filename">
+                        {% for fichero in ficheros %}
+                            <option value="app/static/upload/{{ fichero }}">{{ fichero }}</option>
+                        {% endfor %}
+                    </select>
+                </div>
+                <input type="submit" value="Mostrar" class="btn btn-primary"/>
+            </form>
+        </div>
+        <div class="row">
+            <textarea cols="50" rows="25">{{ contenido }}</textarea>
+        </div>
+
+    </div>
+{% endblock %}
+

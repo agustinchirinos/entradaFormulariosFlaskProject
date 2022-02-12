@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+{% block titulo %}Formulario WTF{% endblock %}
+{% block contenido %}
+<h1>Formulario WTF</h1>
+    <div class="row">
+    <div class="col-sm-4">
+            <form action="{{ url_for('contramedidas.formwtf') }}" method="post" enctype="multipart/form-data">
+                {{ form.csrf_token() }}
+                <div class="mb-3 mt-3">
+                    {{ form.nombre.label(class="form-label") }}
+                    {{ form.nombre(class="form-control") }}
+                </div>
+                <div class="mb-3 mt-3">
+                    {{ form.edad.label(class="form-label") }}
+                    {{ form.edad(class="form-control") }}
+                    {% for error in form.edad.errors %}
+                        <span class="bg-danger">{{ error }}</span>
+                    {% endfor %}
+                </div>
+                <div class="mb-3 mt-3">
+                    {{ form.imagen.label(class="form-label") }}
+                    {{ form.imagen(class="form-control") }}
+                    {% for error in form.imagen.errors %}
+                        <span class="bg-danger">{{ error }}</span>
+                    {% endfor %}
+                </div>
+                <div class="mb-3 mt-3">
+                {{ form.submit(class="btn btn-primary") }}
+                </div>
+
+{#                <input type="submit" value="Buscar" class="btn btn-primary"/>#}
+            </form>
+        </div>
+    </div>
+{% endblock %}

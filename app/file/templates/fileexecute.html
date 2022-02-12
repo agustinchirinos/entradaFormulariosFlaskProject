@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+{% block titulo %}File Execute{% endblock %}
+{% block contenido %}
+<h1>File Execute</h1>
+    {% if msg %}
+        <span class="alert-success">{{ msg }}</span>
+    {% endif %}
+    <div class="col-sm-4">
+        <form action="{{ url_for('file.fileexecute') }}" method="get">
+            <div class="mb-3 mt-3">
+                <select class="form-control" name="filename">
+                    {% for fichero in ficheros %}
+                        <option value="app/static/upload/{{ fichero }}">{{ fichero }}</option>
+                    {% endfor %}
+                </select>
+            </div>
+            <input type="submit" value="Ejecutar" class="btn btn-primary"/>
+        </form>
+    </div>
+
+{% endblock %}
+
