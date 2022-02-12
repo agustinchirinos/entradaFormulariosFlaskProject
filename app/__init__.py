@@ -23,8 +23,6 @@ from .contramedidas import contramedidas
 
 
 def create_app():
-
-    # db.init_app(app)
     app.register_blueprint(xssreflejado)
     app.register_blueprint(xssalmacenado)
     app.register_blueprint(sqlinjection)
