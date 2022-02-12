@@ -13,6 +13,7 @@ app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 db = SQLAlchemy(app)
 migrate = Migrate(app, db)
 
+
 engine = create_engine("postgresql://postgres:123456@localhost:5432/tutorialFlask")
 
 from .xssreflejado import xssreflejado
@@ -23,6 +24,8 @@ from .contramedidas import contramedidas
 
 
 def create_app():
+
+
     app.register_blueprint(xssreflejado)
     app.register_blueprint(xssalmacenado)
     app.register_blueprint(sqlinjection)
